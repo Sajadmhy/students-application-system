@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Button } from "@chakra-ui/react";
 import { checkEmailValidity, checkPasswordMatch } from "../utils";
 import { CheckCircleIcon } from "@heroicons/react/outline";
-import Card from "./Card";
+import Card from "../components/Card";
 
 const SignUp = () => {
   const [name, setName] = useState("");
@@ -80,8 +80,8 @@ const SignUp = () => {
     event.preventDefault();
     setIsSigningUp(true);
     setTimeout(() => {
-        window.location.href = '/'
-    }, 1000)
+      window.location.href = "/";
+    }, 1000);
   };
 
   return (

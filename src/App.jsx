@@ -8,17 +8,17 @@ import {
   useColorModeValue as mode,
 } from "@chakra-ui/react";
 import { useState, createContext } from "react";
-import { SortbySelect } from "./SortBySelect";
+import { SortbySelect } from "../components/SortBySelect";
 import {
   CheckboxFilterPopover,
   PriceFilterPopover,
   LangFilterPopover,
   CountryFilterPopover,
   DurationFilterPopover,
-} from "./Filter";
+} from "../components/Filter";
 // import { MobileFilter } from "./MobileFilter";
-import { products } from "./_data";
-import { Applications } from "./Applications";
+import { products } from "../data/_data";
+import { Applications } from "../components/Applications";
 import ReactPaginate from "react-paginate";
 
 export const ProductsContext = createContext();
@@ -46,7 +46,7 @@ function App() {
         return (
           new Date(a.applicationDeadline) - new Date(b.applicationDeadline)
         );
-      })
+      });
       setFilteredProducts(newSorted);
     } else if (value === "low-to-high") {
       const newSorted = [...filteredProducts];

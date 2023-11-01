@@ -9,13 +9,13 @@ import {
   Text,
   useColorModeValue as mode,
   usePopoverContext,
-} from '@chakra-ui/react'
-import React from 'react'
-import { HiChevronDown } from 'react-icons/hi'
-import { FilterActionButtons } from './FilterActionButtons'
+} from "@chakra-ui/react";
+import React from "react";
+import { HiChevronDown } from "react-icons/hi";
+import { FilterActionButtons } from "./FilterActionButtons";
 
 export const FilterPopoverButton = (props) => {
-  const { label, icon, selected } = props
+  const { label, icon, selected } = props;
   return (
     <PopoverTrigger>
       <HStack
@@ -32,11 +32,11 @@ export const FilterPopoverButton = (props) => {
         spacing="1"
         data-selected={selected || undefined}
         _expanded={{
-          bg: mode('gray.100', 'gray.700'),
+          bg: mode("gray.100", "gray.700"),
         }}
         _selected={{
-          bg: 'blue.50',
-          borderColor: 'blue.500',
+          bg: "blue.50",
+          borderColor: "blue.500",
         }}
       >
         {icon && <Icon as={icon} boxSize="2" />}
@@ -44,19 +44,20 @@ export const FilterPopoverButton = (props) => {
         <Icon as={HiChevronDown} fontSize="xl" color="gray.400" />
       </HStack>
     </PopoverTrigger>
-  )
-}
+  );
+};
 export const FilterPopoverContent = (props) => {
-  const { header, children, onClickCancel, onClickApply, isCancelDisabled } = props
-  const { onClose } = usePopoverContext()
+  const { header, children, onClickCancel, onClickApply, isCancelDisabled } =
+    props;
+  const { onClose } = usePopoverContext();
   return (
     <PopoverContent
       _focus={{
-        shadow: 'none',
+        shadow: "none",
         outline: 0,
       }}
       _focusVisible={{
-        shadow: 'outline',
+        shadow: "outline",
       }}
     >
       {header && <PopoverHeader srOnly>{header}</PopoverHeader>}
@@ -64,16 +65,16 @@ export const FilterPopoverContent = (props) => {
       <PopoverFooter>
         <FilterActionButtons
           onClickCancel={() => {
-            onClickCancel?.()
-            onClose()
+            onClickCancel?.();
+            onClose();
           }}
           isCancelDisabled={isCancelDisabled}
           onClickApply={() => {
-            onClickApply?.()
-            onClose()
+            onClickApply?.();
+            onClose();
           }}
         />
       </PopoverFooter>
     </PopoverContent>
-  )
-}
+  );
+};

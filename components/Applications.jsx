@@ -2,7 +2,6 @@ import { Box, SimpleGrid } from "@chakra-ui/react";
 import { ProductCard } from "./ProductCard";
 
 export const Applications = (props) => {
-
   return (
     <Box
       mt="6"

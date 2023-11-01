@@ -1,4 +1,4 @@
-import Card from "./Card";
+import Card from "../components/Card";
 import { useForm } from "react-hook-form";
 import { Button, useToast } from "@chakra-ui/react";
 
